@@ -1,4 +1,4 @@
-## EDA: New York City Subway Traffic and Demographic 
+
 
 We hit the ground running in our first week at the Metis Data Science Bootcamp!
 
