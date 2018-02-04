@@ -1,4 +1,3 @@
-# Understanding World Happiness
 ## Metis Project 2: Webscraping and OLS Regression
 
 Happiness is a hard thing to pin down.  It's both hard to measure and difficult to explain why some people are happier than others.  
