@@ -4,6 +4,7 @@ Happiness is a hard thing to pin down.  It's both hard to measure and difficult 
 
 The UN endeavors tackle both questions with their annual World Happiness Report (now in it's 5th year), and in this post I'll show how I combined it with some other data to find relationships between a country's characteristics and it's World Happiness Score.
 
+
 ![Happy and Free](../images/Happy-and-free.jpg "Happy and Free")
 
 ### Introducing the UN's World Happiness Report
