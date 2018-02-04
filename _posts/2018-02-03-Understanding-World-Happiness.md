@@ -47,7 +47,7 @@ happiness_2017 = pd.read_html(str(tables[0]), header = 0, index_col = 0)[0]
 ```
 Easy!
 
-| ![](../images/Screen Shot 2018-02-03 at 1.57.25 PM.png) |
+| ![](../images/wrldhpnsscrape.png) |
 |:--:|
 |**Figure 1**: Webscraping [World Happiness](https://en.wikipedia.org/wiki/World_Happiness_Report) |
 
@@ -84,7 +84,7 @@ In the end, I scraped the following features for each of the 155 countries:
 
 Definitions for each of these can be found on the CIA's World Fact [Definitions and Notes page](https://www.cia.gov/library/publications/the-world-factbook/docs/notesanddefs.html?fieldkey=2011&term=Geographic%20coordinates).
 
-| ![](../images/Screen Shot 2018-02-01 at 1.58.03 PM.png) |
+| ![](../images/wrldfactscrape.png) |
 |:--:|
 |**Figure 2:** Webscraping [World Facts](https://www.cia.gov/library/publications/the-world-factbook/) |
 
@@ -106,19 +106,19 @@ Before I started building my model, I wanted to do some exploratory data anlaysi
 
 In the below image, you can see the distribution of World Happiness Scores for 2017.  It follows a relatively normal distribution, with a mean around 5.5.  The lowest scoring countries were Burundi (2.91) and Tanzania (3.35), while the highest scoring countries were Norway (7.54) and Denmark (7.52).
 
-| ![](../../emilyageller.github.io/images/CountryScoreDistribution.png) |
+| ![](../images/CountryScoreDistribution.png) |
 |:--:|
 | **Figure 2**: 2017 World Happiness Score Distribution|
 
 In order to get good results during my modeling process, I wanted to make sure that my features correlated with my target (Happiness Score).  I discarded features with an absolute correlation less than 0.3.
 
-| ![](../images/Screen Shot 2018-02-03 at 2.25.34 PM.png) |
+| ![](../images/wrldhppnscorr.png) |
 |:--:|
 |**Figure 3:** Correlations between each feature and the target (Score) |
 
 I ended up getting rid of Population Density, GDP, Land Area, Population and Generosity.  The fact that these features didn't correlate well with Happiness score surprised me! A heatmap of correlations between my remaining features and score is shown in Figure 4. You can see that there are pretty strong relatinships between my remaining features and score.  There are also some strong correlations between each of the features, which tipped me off to be careful of multicollinearity when modeling.
 
-| ![](../../emilyageller.github.io/images/secondcorrplot.png)|
+| ![](../images/secondcorrplot.png)|
 |:---:|
 |**Figure 4**: Correlations across my feature set. Light red corresponds to strong positive correlation, light blue to strong negative correlation, and darker colors denote weaker correlations.|
 
@@ -126,7 +126,7 @@ To dive a bit deeper, I plotted each feature against each other to get a feeling
 
 One relationship that stuck out to me was that between GDP per capita and all of the other features. See Figure 6a. It has a positively skewed distribution, so a log transform looked like it could be in order!
 
-| ![](../../emilyageller.github.io/images/GDP.png) | ![](../../emilyageller.github.io/images/logGDPpercapita.png) |
+| ![](../images/GDP.png) | ![](../images/logGDPpercapita.png) |
 |:--:|:--:|
 |**Figure 6a:** GDP per Capita | **Figure 6b:** Logarithmically Transformed GDP per Capita |
 
@@ -165,7 +165,7 @@ The features whose statistical significance that I was comfortable with were:
 
 The StatsModel Summary for this final set of features is shown in Figure 7.
 
-| ![](../../emilyageller.github.io/images/Screen Shot 2018-02-03 at 2.59.59 PM.png) |
+| ![](../images/wrldhpnsmodelsummary.png) |
 |:--:|
 |**Figure 7:** OLS Regression Summary for my final feature set|
 
@@ -189,7 +189,7 @@ One way to see how my model performed was to plot the actual scores against my m
 
 Another way to view the model is to look at the residuals for each prediction.  Ideally they'll look normally (randomly) distributed, meaning the model has extracted most of the variance in the data.
 
-| ![](../../emilyageller.github.io/images/ActualvPredicted.png) | ![](../../emilyageller.github.io/images/ResidualsvPrediction.png)
+| ![](../images/ActualvPredicted.png) | ![](../images/ResidualsvPrediction.png)
 |:--:|:--:|
 |**Figure 8a:** Actual scores vs Model's predictions | **Figure 8b**: Residuals for each prediction |
 
@@ -197,7 +197,7 @@ Figures 8a and 8b suggest that the model is accounting for quite a bit of the va
 
 One more way to see how the model performs is to plot the actual scores and predictions against each of the features.  See Figure 9.
 
-|![](../../emilyageller.github.io/images/RegressionFit.png)|
+|![](../images/RegressionFit.png)|
 |:--:|
 |**Figure 9:** How the model's predictions compare to the actual results for each feature.  Blue dots indicate actual results, and red dots indicate predictions.|
 
@@ -210,7 +210,7 @@ All the stats are great, but what does this model actually tell us?!
 
 It tells us that (from the data I collected) there's a positive statistically significant relationship between 5 of the features that I collected and a country's Happiness Score.  See Figure 10.
 
-|![](../../emilyageller.github.io/images/Screen Shot 2018-02-03 at 3.39.16 PM.png) |
+|![](../images/wrldhpnsrlshp.png) |
 |:--:|
 |**Figure 10**: The most statistically significant relationship the model found between the original set of features and the Happiness Score |
 
